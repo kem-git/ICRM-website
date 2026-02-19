@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "/logo.png"; // 👈 uses the favicon from your public folder
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="flex flex-col">
+            <img
+              src={logo}
+              alt="ICRM Logo"
+              className="h-10 w-10 object-contain"
+            />
+
+             <div className="flex flex-col">
               <span className="text-xl font-bold text-primary">ICRM</span>
               <span className="text-[10px] text-muted-foreground -mt-1">Gospel Through Therapy</span>
             </div>

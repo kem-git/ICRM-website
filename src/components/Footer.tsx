@@ -80,6 +80,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>© 2025 International Christian Rehab Mission (ICRM). All rights reserved.</p>
+          <p>Designed and developed by MEKDAK</p>
           <p className="mt-2 italic text-xs">"He took up our infirmities and bore our diseases... and by his wounds we are healed." — Isaiah 53:4-5</p>
         </div>
       </div>
