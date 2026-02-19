@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Quote } from "lucide-react";
+import { Quote, MapPin } from "lucide-react";
 import communityImage from "@/assets/community-impact.jpg";
 
 const Stories = () => {
   return (
     <div className="flex flex-col">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-accent/10 via-secondary/10 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -26,7 +26,6 @@ const Stories = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               From Pain to Purpose: A Journey of Healing
             </h2>
-            
             <div className="mb-8">
               <img 
                 src={communityImage} 
@@ -68,14 +67,14 @@ const Stories = () => {
         </div>
       </section>
 
-      {/* Therapist Stories */}
+      {/* Voices from Our Team */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Voices from Our Team: Why We Do This Work
             </h2>
-            <p className="text-center text-muted-foreground mb-12">
+            <p className="text-muted-foreground mb-12">
               Personal reflections from those delivering care
             </p>
 
@@ -117,11 +116,11 @@ const Stories = () => {
       {/* Community Impact */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               How ICRM Is Transforming Communities
             </h2>
-            <p className="text-center text-muted-foreground mb-12">
+            <p className="text-muted-foreground mb-12">
               Beyond individual stories, we celebrate the broader impact in communities where we work
             </p>
 
