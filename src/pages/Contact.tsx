@@ -80,8 +80,11 @@ const Contact = () => {
 
               <div>
                 <p className="font-semibold">Phone</p>
-                <p>SAM : +44 7730873122</p>
-                <p>MATTHEW : +44 7704 717771</p>
+                <p>Punith : +44 7587 891086</p>
+                <p>Mathew : +44 7704 717771</p>
+                <p>Benny : +44 7405 093086</p>
+                <p>Sam : +44 7730 873122</p>
+                
               </div>
 
               <div>
