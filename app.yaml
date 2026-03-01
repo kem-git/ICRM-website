@@ -3,3 +3,7 @@ kind: wasmer.io/App.v0
 name: icrm
 owner: kem-git
 package: .
+# Add the section below
+redirects:
+  - from: /.*
+    to: /index.html
