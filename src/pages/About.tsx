@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Heart, Lightbulb, Wrench } from "lucide-react";
-import teamPhoto from "@/assets/team-photo.jpg";
+
 
 const About = () => {
   return (
@@ -184,11 +184,6 @@ const About = () => {
           </div>
 
           <div className="max-w-5xl mx-auto mt-12">
-            <img
-              src={teamPhoto}
-              alt="ICRM Team"
-              className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
-            />
           </div>
         </div>
       </section>

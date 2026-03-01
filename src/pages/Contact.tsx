@@ -1,187 +1,100 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
+  const subject = encodeURIComponent("Inquiry from ICRM Website");
+  const body = encodeURIComponent(
+    "Hello ICRM Team,\n\nI would like to enquire about...\n\nKind regards,"
+  );
+
+  const mailtoLink = `mailto:admin@icrm.org.uk?subject=${subject}&body=${body}`;
+
   return (
     <div className="flex flex-col">
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Contact Us
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We'd love to hear from you—whether you have questions about our mission, want to explore volunteer opportunities, or discuss partnerships
+            We'd love to hear from you—whether you have questions about our mission,
+            volunteer opportunities, or partnerships.
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 max-w-4xl mx-auto space-y-8">
 
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Get in Touch
-              </h2>
+          <h2 className="text-3xl font-bold text-center text-foreground">
+            Get in Touch
+          </h2>
 
-              <Card className="border-2">
-                <CardContent className="p-6">
-                  <form className="space-y-4">
+          {/* Email Contact Card */}
+          <Card className="border-2 shadow-lg">
+            <CardContent className="p-10 text-center space-y-6">
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your Name" />
-                      </div>
-
-                      <div>
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="your@email.com" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="inquiry-type">Inquiry Type</Label>
-                      <Select>
-                        <SelectTrigger id="inquiry-type">
-                          <SelectValue placeholder="Select inquiry type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="general">General Inquiries</SelectItem>
-                          <SelectItem value="partnership">Partnership Request</SelectItem>
-                          <SelectItem value="volunteer">Volunteer Opportunities</SelectItem>
-                          <SelectItem value="donation">Donations & Development</SelectItem>
-                          <SelectItem value="media">Media Inquiries</SelectItem>
-                          <SelectItem value="services">Therapeutic Services</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" placeholder="Brief subject line" />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell us more about your inquiry"
-                        rows={6}
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full" size="lg">
-                      Send Message
-                    </Button>
-
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
+              <div className="flex justify-center">
+                <div className="bg-primary/10 p-5 rounded-full">
+                  <Mail className="w-8 h-8 text-primary" />
+                </div>
+              </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Contact Information
-                </h2>
-
-                {/* Email Contacts */}
-                <Card className="mb-6">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Mail className="w-5 h-5 text-primary" />
-                      Direct Email Contacts
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 text-sm">
-
-                    <div>
-                      <p className="font-semibold">General Inquiries:</p>
-                      <a href="mailto:info@icrm.org" className="text-primary hover:text-primary/80">
-                        info@icrm.org
-                      </a>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold">Therapeutic Services:</p>
-                      <a href="mailto:services@icrm.org" className="text-primary hover:text-primary/80">
-                        services@icrm.org
-                      </a>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold">Volunteer Opportunities:</p>
-                      <a href="mailto:volunteers@icrm.org" className="text-primary hover:text-primary/80">
-                        volunteers@icrm.org
-                      </a>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold">Donations & Development:</p>
-                      <a href="mailto:giving@icrm.org" className="text-primary hover:text-primary/80">
-                        giving@icrm.org
-                      </a>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold">Partnerships:</p>
-                      <a href="mailto:partnerships@icrm.org" className="text-primary hover:text-primary/80">
-                        partnerships@icrm.org
-                      </a>
-                    </div>
-
-                  </CardContent>
-                </Card>
-
-                {/* Phone & Address */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Phone className="w-5 h-5 text-primary" />
-                      Phone & Address
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4 text-sm">
-
-                    <div>
-                      <p className="font-semibold">Phone</p>
-                      <p>SAM : +44 7730873122</p>
-                      <p>MATTHEW : +44 7704 717771</p>
-                    </div>
-
-                    <div>
-                      <p className="font-semibold">Address</p>
-                      <p>
-                        International Christian Rehab Mission (ICRM)<br />
-                        3 Wood Rise, Pinner, Greater London, HA5 2JD, United Kingdom
-                      </p>
-                    </div>
-
-                  </CardContent>
-                </Card>
-
+                <h3 className="text-2xl font-semibold mb-2">
+                  Email Our Team
+                </h3>
+                <p className="text-muted-foreground max-w-md mx-auto">
+                  Click below to contact us directly using your preferred email
+                  application. A message template will be pre-filled for your convenience.
+                </p>
               </div>
-            </div>
 
-          </div>
+              <Button
+                asChild
+                size="lg"
+                className="px-10 py-6 text-base rounded-2xl shadow-md hover:shadow-lg transition-all"
+              >
+                <a href={mailtoLink}>
+                  <Mail className="w-5 h-5 mr-2" />
+                  Send an Email
+                </a>
+              </Button>
+
+            </CardContent>
+          </Card>
+
+          {/* Phone & Address */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-primary" />
+                Phone & Address
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 text-sm">
+
+              <div>
+                <p className="font-semibold">Phone</p>
+                <p>SAM : +44 7730873122</p>
+                <p>MATTHEW : +44 7704 717771</p>
+              </div>
+
+              <div>
+                <p className="font-semibold">Address</p>
+                <p>
+                  International Christian Rehab Mission (ICRM)<br />
+                  3 Wood Rise, Pinner, Greater London, HA5 2JD, United Kingdom
+                </p>
+              </div>
+
+            </CardContent>
+          </Card>
+
         </div>
       </section>
 
