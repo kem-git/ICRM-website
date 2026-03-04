@@ -137,7 +137,7 @@ const About = () => {
             {/* Matthew */}
             <Card className="border-2">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-bold">Matthew Anderson</h3>
+                <h3 className="text-xl font-bold">Mathew Andersen</h3>
                 <p className="text-primary font-medium">Director of Technology & Operations</p>
                 <p className="text-sm text-muted-foreground">
                   25+ years leading global digital transformation across Automotive, Telecom, and Insurance sectors. 
@@ -146,11 +146,11 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Sam */}
+            {/* Samuel */}
             <Card className="border-2">
               <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-bold">Sam</h3>
-                <p className="text-primary font-medium">Data & Analytics Lead</p>
+                <h3 className="text-xl font-bold">Samuel Benjamin</h3>
+                <p className="text-primary font-medium">Director of Communications & Governance</p>
                 <p className="text-sm text-muted-foreground">
                   Data governance and analytics specialist with a scientific background in biology. 
                   Focused on data-driven decision making and mission impact measurement.
