@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "/logo.png"; // 👈 uses the favicon from your public folder
+import logo from "/logo.png"; 
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +30,7 @@ const Navigation = () => {
               alt="ICRM Logo"
               className="h-10 w-10 object-contain"
             />
-
-             <div className="flex flex-col">
+            <div className="flex flex-col">
               <span className="text-xl font-bold text-primary">ICRM</span>
               <span className="text-[10px] text-muted-foreground -mt-1">Gospel Through Therapy</span>
             </div>
@@ -50,11 +49,6 @@ const Navigation = () => {
                 </Button>
               </Link>
             ))}
-            <Link to="/get-involved">
-              <Button variant="secondary" size="sm" className="ml-4">
-                Donate Now
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -79,11 +73,6 @@ const Navigation = () => {
                 </Button>
               </Link>
             ))}
-            <Link to="/get-involved" onClick={() => setIsOpen(false)}>
-              <Button variant="secondary" className="w-full">
-                Donate Now
-              </Button>
-            </Link>
           </div>
         )}
       </div>

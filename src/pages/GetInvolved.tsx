@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { DollarSign, Users, Heart, Handshake } from "lucide-react";
+import { Users, Heart, Handshake } from "lucide-react";
 
 const GetInvolved = () => {
   return (
@@ -18,17 +18,8 @@ const GetInvolved = () => {
 
       {/* Overview */}
       <section className="py-16">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
-          <Card>
-            <CardContent className="p-6 text-center">
-              <DollarSign className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Donate</h3>
-              <p className="text-sm text-muted-foreground">
-                Support therapeutic services and mission work financially.
-              </p>
-            </CardContent>
-          </Card>
-
+        {/* Adjusted grid-cols to lg:grid-cols-3 to center the 3 remaining items */}
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
           <Card>
             <CardContent className="p-6 text-center">
               <Users className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -64,14 +55,7 @@ const GetInvolved = () => {
       {/* Informational Sections */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl space-y-16">
-
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Donate</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Financial contributions enable therapeutic care, training, and outreach initiatives in underserved communities.
-            </p>
-          </div>
-
+          
           <div>
             <h2 className="text-3xl font-bold mb-4">Volunteer</h2>
             <p className="text-muted-foreground leading-relaxed">
