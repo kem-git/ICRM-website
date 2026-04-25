@@ -1,10 +1,83 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, FileText, Video } from "lucide-react";
+import SEO from "@/components/seo/SEO";
 
 const News = () => {
   return (
     <>
+      <SEO
+        title="News & Resources | ICRM"
+        description="Latest updates, mission reports, upcoming events, and educational resources from ICRM — International Christian Rehab Mission. Gospel Through Therapy in action."
+        canonical="https://www.icrm.org.uk/news"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Blog",
+              "name": "ICRM News & Resources",
+              "url": "https://www.icrm.org.uk/news",
+              "description": "Latest updates, mission reports, and educational resources from ICRM.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission",
+                "url": "https://www.icrm.org.uk"
+              },
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.icrm.org.uk" },
+                  { "@type": "ListItem", "position": 2, "name": "News", "item": "https://www.icrm.org.uk/news" }
+                ]
+              }
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "Expanding Our Reach in India",
+              "datePublished": "2025-03-15",
+              "publisher": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission"
+              },
+              "description": "Our recent mission trip demonstrated the urgent need for integrated therapeutic and spiritual care."
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "Therapy as Ministry",
+              "datePublished": "2025-02-28",
+              "publisher": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission"
+              },
+              "description": "Exploring how therapeutic excellence reflects Christ's character."
+            },
+            {
+              "@type": "Event",
+              "name": "Webinar: Sensory Processing Disorder",
+              "startDate": "2025-11-25",
+              "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+              "organizer": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission",
+                "url": "https://www.icrm.org.uk"
+              },
+              "description": "Educational session on sensory processing challenges in children."
+            },
+            {
+              "@type": "Event",
+              "name": "Mission Trip Deployment",
+              "startDate": "2025-11-11",
+              "endDate": "2025-11-12",
+              "organizer": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission",
+                "url": "https://www.icrm.org.uk"
+              }
+            }
+          ]
+        }}
+      />
+
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background text-center">
         <div className="container mx-auto px-4">
@@ -54,7 +127,7 @@ const News = () => {
                   February 28, 2025
                 </div>
                 <p className="text-muted-foreground">
-                  Exploring how therapeutic excellence reflects Christ’s character.
+                  Exploring how therapeutic excellence reflects Christ's character.
                 </p>
               </CardContent>
             </Card>
