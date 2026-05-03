@@ -1,11 +1,62 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Heart, Lightbulb, Wrench } from "lucide-react";
-
+import SEO from "@/components/seo/SEO";
 
 const About = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="About Us | ICRM — International Christian Rehab Mission"
+        description="Founded in 2023, ICRM bridges professional therapeutic care with the Gospel's transformative power, serving communities where both healing and hope are needed."
+        canonical="https://www.icrm.org.uk/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "AboutPage",
+              "name": "About ICRM",
+              "url": "https://www.icrm.org.uk/about",
+              "description": "ICRM was born from a vision given by God in August 2023, bridging professional therapeutic care with the Gospel's transformative power.",
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://www.icrm.org.uk" },
+                  { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.icrm.org.uk/about" }
+                ]
+              }
+            },
+            {
+              "@type": "Person",
+              "name": "Mathew Andersen",
+              "jobTitle": "Director of Technology & Operations",
+              "worksFor": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "description": "25+ years leading global digital transformation across Automotive, Telecom, and Insurance sectors."
+            },
+            {
+              "@type": "Person",
+              "name": "Samuel Benjamin",
+              "jobTitle": "Director of Communications & Governance",
+              "worksFor": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "description": "Data governance and analytics specialist with a scientific background in biology."
+            },
+            {
+              "@type": "Person",
+              "name": "Punith Kumar",
+              "jobTitle": "Medical Director",
+              "worksFor": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "description": "Physiotherapist with 20+ years in musculoskeletal and sports rehabilitation across India, Malaysia, and the UK."
+            },
+            {
+              "@type": "Person",
+              "name": "Benny Daniel",
+              "jobTitle": "Mission Director",
+              "worksFor": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "description": "Leading mission strategy, partnerships, and Gospel-centered outreach across communities served by ICRM."
+            }
+          ]
+        }}
+      />
 
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
@@ -31,10 +82,10 @@ const About = () => {
               The wheelchair symbolizes the physical challenges and therapeutic needs we address; the cross on the mountain represents the Gospel message that brings spiritual healing and eternal hope.
             </p>
             <p className="text-muted-foreground">
-              This vision compelled us to bridge the gap between professional therapeutic care and the Gospel’s transformative power, serving communities where both are desperately needed but often unavailable.
+              This vision compelled us to bridge the gap between professional therapeutic care and the Gospel's transformative power, serving communities where both are desperately needed but often unavailable.
             </p>
             <p className="text-muted-foreground">
-              Founded on the conviction that Christ calls us to minister to the whole person—body, mind, and spirit—ICRM exists to extend both healing and hope to the world’s most underserved communities.
+              Founded on the conviction that Christ calls us to minister to the whole person—body, mind, and spirit—ICRM exists to extend both healing and hope to the world's most underserved communities.
             </p>
           </div>
         </div>
@@ -82,7 +133,7 @@ const About = () => {
               {
                 icon: <Heart className="w-10 h-10 text-accent mb-4" />,
                 title: "Evangelise",
-                text: "Boldly and lovingly sharing the message of Christ’s redemption and hope through actions and words."
+                text: "Boldly and lovingly sharing the message of Christ's redemption and hope through actions and words."
               },
               {
                 icon: <Lightbulb className="w-10 h-10 text-secondary mb-4" />,
@@ -140,7 +191,7 @@ const About = () => {
                 <h3 className="text-xl font-bold">Mathew Andersen</h3>
                 <p className="text-primary font-medium">Director of Technology & Operations</p>
                 <p className="text-sm text-muted-foreground">
-                  25+ years leading global digital transformation across Automotive, Telecom, and Insurance sectors. 
+                  25+ years leading global digital transformation across Automotive, Telecom, and Insurance sectors.
                   Serves as Head of Technology Council at Tokyo Union Church (Japan) and WCF London.
                 </p>
               </CardContent>
@@ -152,7 +203,7 @@ const About = () => {
                 <h3 className="text-xl font-bold">Samuel Benjamin</h3>
                 <p className="text-primary font-medium">Director of Communications & Governance</p>
                 <p className="text-sm text-muted-foreground">
-                  Data governance and analytics specialist with a scientific background in biology. 
+                  Data governance and analytics specialist with a scientific background in biology.
                   Focused on data-driven decision making and mission impact measurement.
                 </p>
               </CardContent>
@@ -164,7 +215,7 @@ const About = () => {
                 <h3 className="text-xl font-bold">Punith Kumar</h3>
                 <p className="text-primary font-medium">Medical Director</p>
                 <p className="text-sm text-muted-foreground">
-                  Physiotherapist with 20+ years in musculoskeletal and sports rehabilitation across India, Malaysia, and the UK. 
+                  Physiotherapist with 20+ years in musculoskeletal and sports rehabilitation across India, Malaysia, and the UK.
                   Award-winning educator passionate about rehabilitation-focused mission work.
                 </p>
               </CardContent>

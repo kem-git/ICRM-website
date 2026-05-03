@@ -1,10 +1,56 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Activity, Brain, HandHeart, Sparkles, MapPin } from "lucide-react";
+import SEO from "@/components/seo/SEO";
 
 const OurWork = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Our Work | ICRM — Gospel-Centred Therapy & Rehabilitation"
+        description="ICRM delivers occupational therapy, physical rehabilitation, and counselling in India and the UK, integrating professional therapeutic care with the transforming power of the Gospel."
+        canonical="https://www.icrm.org.uk/our-work"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "Our Work — ICRM",
+              "url": "https://www.icrm.org.uk/our-work",
+              "description": "ICRM's therapy programmes, rehabilitation initiatives, and Gospel-centred care services in India and the United Kingdom.",
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://www.icrm.org.uk" },
+                  { "@type": "ListItem", "position": 2, "name": "Our Work", "item": "https://www.icrm.org.uk/our-work" }
+                ]
+              }
+            },
+            {
+              "@type": "Service",
+              "name": "Occupational Therapy",
+              "description": "Helping individuals develop or regain skills needed for daily living and meaningful activity, from self-care and work to community participation.",
+              "provider": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "areaServed": ["India", "United Kingdom"]
+            },
+            {
+              "@type": "Service",
+              "name": "Physical Therapy & Rehabilitation",
+              "description": "Evidence-based physical therapy addressing mobility, pain management, and functional restoration combined with spiritual encouragement.",
+              "provider": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "areaServed": ["India", "United Kingdom"]
+            },
+            {
+              "@type": "Service",
+              "name": "Counselling & Mental Health Support",
+              "description": "Compassionate counselling addressing emotional suffering, trauma, and mental health challenges, integrating Christian perspectives on healing.",
+              "provider": { "@type": "Organization", "name": "International Christian Rehab Mission" },
+              "areaServed": ["India", "United Kingdom"]
+            }
+          ]
+        }}
+      />
+
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-accent/10 via-primary/5 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

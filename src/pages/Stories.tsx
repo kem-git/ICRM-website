@@ -2,10 +2,67 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Quote, MapPin } from "lucide-react";
 import communityImage from "@/assets/community-impact.jpg";
+import SEO from "@/components/seo/SEO";
 
 const Stories = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Stories of Transformation | ICRM"
+        description="Read real stories of lives changed through ICRM's Gospel-centred therapy. 500+ individuals served across India and the UK through integrated therapeutic and spiritual care."
+        canonical="https://www.icrm.org.uk/stories"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              "name": "Stories & Impact — ICRM",
+              "url": "https://www.icrm.org.uk/stories",
+              "description": "Testimonies and transformation stories from individuals served by ICRM's Gospel-centred therapy programmes across India and the United Kingdom.",
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.icrm.org.uk" },
+                  { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://www.icrm.org.uk/stories" }
+                ]
+              }
+            },
+            {
+              "@type": "Article",
+              "headline": "From Pain to Purpose: A Journey of Healing",
+              "description": "Through ICRM's integrated approach, individuals experience restored function, renewed purpose, and transformation through relationship with Christ.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "International Christian Rehab Mission",
+                "url": "https://www.icrm.org.uk"
+              },
+              "image": "https://www.icrm.org.uk/logo.png"
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How does ICRM integrate therapy with the Gospel?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ICRM provides comprehensive therapeutic assessment and treatment while building trusting relationships that create space for Gospel conversations. Professional excellence in therapeutic care demonstrates Christ's character, while ongoing relationships create opportunities for deeper discipleship."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Where does ICRM serve communities?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ICRM currently serves communities in India and the United Kingdom, providing therapeutic care to 500+ individuals across both regions."
+                  }
+                }
+              ]
+            }
+          ]
+        }}
+      />
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-accent/10 via-secondary/10 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -27,9 +84,9 @@ const Stories = () => {
               From Pain to Purpose: A Journey of Healing
             </h2>
             <div className="mb-8">
-              <img 
-                src={communityImage} 
-                alt="Patient transformation story" 
+              <img
+                src={communityImage}
+                alt="Patient transformation story"
                 className="rounded-lg shadow-[var(--shadow-strong)] w-full h-[400px] object-cover"
               />
             </div>

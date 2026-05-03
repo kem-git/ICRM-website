@@ -1,0 +1,32 @@
+# ICRM — International Christian Rehab Mission
+# https://www.icrm.org.uk/llms.txt
+
+> ICRM (International Christian Rehab Mission) is a UK-based Christian
+> organisation that delivers the Gospel through therapy and rehabilitation
+> programmes, combining faith-based support with practical care for
+> individuals and communities in need.
+
+## Core Pages
+
+- [Home](https://www.icrm.org.uk/): Overview of ICRM's mission, vision, and work
+- [About](https://www.icrm.org.uk/about): Who we are, our history, values, and team
+- [Our Work](https://www.icrm.org.uk/our-work): Therapy programmes and rehabilitation initiatives
+- [Get Involved](https://www.icrm.org.uk/get-involved): How to volunteer, pray, or partner with ICRM
+- [Stories](https://www.icrm.org.uk/stories): Testimonies and transformation stories
+- [News](https://www.icrm.org.uk/news): Latest updates, events, and announcements
+- [Contact](https://www.icrm.org.uk/contact): Get in touch with the ICRM team
+
+## Key Facts
+
+- Organisation: International Christian Rehab Mission (ICRM)
+- Founded: August 2023
+- Location: 3 Wood Rise, Pinner, Greater London, HA5 2JD, United Kingdom
+- Website: https://www.icrm.org.uk
+- Focus: Gospel-centred therapy and rehabilitation
+- Services: Occupational Therapy, Physical Therapy, Counselling
+- Areas Served: India, United Kingdom
+- Contact: admin@icrm.org.uk
+
+## Licensing
+
+Content on icrm.org.uk is © ICRM unless stated otherwise.

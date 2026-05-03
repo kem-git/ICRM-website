@@ -1,9 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Heart, Handshake } from "lucide-react";
+import SEO from "@/components/seo/SEO";
 
 const GetInvolved = () => {
   return (
     <>
+      <SEO
+        title="Get Involved | Volunteer, Donate & Partner with ICRM"
+        description="Join ICRM's mission. Volunteer your skills, pray with us, or partner strategically to bring healing and hope through Gospel-centred therapy and rehabilitation."
+        canonical="https://www.icrm.org.uk/get-involved"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Get Involved — ICRM",
+          "url": "https://www.icrm.org.uk/get-involved",
+          "description": "Ways to volunteer, pray, and partner with ICRM.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home",         "item": "https://www.icrm.org.uk" },
+              { "@type": "ListItem", "position": 2, "name": "Get Involved", "item": "https://www.icrm.org.uk/get-involved" }
+            ]
+          }
+        }}
+      />
+
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-secondary/20 via-primary/10 to-background text-center">
         <div className="container mx-auto px-4">
@@ -18,7 +39,6 @@ const GetInvolved = () => {
 
       {/* Overview */}
       <section className="py-16">
-        {/* Adjusted grid-cols to lg:grid-cols-3 to center the 3 remaining items */}
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
           <Card>
             <CardContent className="p-6 text-center">
@@ -55,7 +75,7 @@ const GetInvolved = () => {
       {/* Informational Sections */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl space-y-16">
-          
+
           <div>
             <h2 className="text-3xl font-bold mb-4">Volunteer</h2>
             <p className="text-muted-foreground leading-relaxed">

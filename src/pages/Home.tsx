@@ -4,10 +4,39 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, GraduationCap, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-therapy.jpg";
 import communityImage from "@/assets/community-impact.jpg";
+import SEO from "@/components/seo/SEO";
 
 const Home = () => {
   return (
     <>
+      <SEO
+        title="ICRM — International Christian Rehab Mission | Gospel Through Therapy"
+        description="ICRM is a UK-based Christian organisation delivering the Gospel through therapy and rehabilitation. Transforming lives through faith-centred care and support."
+        canonical="https://www.icrm.org.uk/"
+        schema={[
+          {
+            "@type": "Organization",
+            "@id": "https://www.icrm.org.uk/#org",
+            "name": "International Christian Rehab Mission",
+            "alternateName": "ICRM",
+            "url": "https://www.icrm.org.uk",
+            "logo": "https://www.icrm.org.uk/logo.png",
+            "description": "ICRM delivers the Gospel through therapy and rehabilitation programmes, combining faith-based support with practical care for individuals and communities in need.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.icrm.org.uk/#site",
+            "url": "https://www.icrm.org.uk",
+            "name": "ICRM — International Christian Rehab Mission",
+            "description": "Gospel Through Therapy"
+          }
+        ]}
+      />
+
       {/* Hero */}
       <section className="relative min-h-[600px] flex items-center overflow-hidden">
         <div
@@ -115,7 +144,7 @@ const Home = () => {
               Why ICRM?
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Therapy and faith are complementary expressions of Christ’s healing love.
+              Therapy and faith are complementary expressions of Christ's healing love.
             </p>
             <Link to="/our-work">
               <Button size="lg">Learn About Our Work</Button>

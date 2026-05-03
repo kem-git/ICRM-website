@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
+import SEO from "@/components/seo/SEO";
 
 const Contact = () => {
   const subject = encodeURIComponent("Inquiry from ICRM Website");
@@ -12,6 +13,44 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Contact Us | ICRM — International Christian Rehab Mission"
+        description="Get in touch with the ICRM team. Contact us about our mission, volunteer opportunities, or partnerships. Based in Pinner, Greater London."
+        canonical="https://www.icrm.org.uk/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "ContactPage",
+              "name": "Contact ICRM",
+              "url": "https://www.icrm.org.uk/contact",
+              "description": "Contact the ICRM team for enquiries about our mission, volunteering, or partnerships.",
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.icrm.org.uk" },
+                  { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.icrm.org.uk/contact" }
+                ]
+              }
+            },
+            {
+              "@type": "Organization",
+              "name": "International Christian Rehab Mission",
+              "url": "https://www.icrm.org.uk",
+              "email": "admin@icrm.org.uk",
+              "telephone": "+447587891086",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3 Wood Rise",
+                "addressLocality": "Pinner",
+                "addressRegion": "Greater London",
+                "postalCode": "HA5 2JD",
+                "addressCountry": "GB"
+              }
+            }
+          ]
+        }}
+      />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
@@ -84,7 +123,6 @@ const Contact = () => {
                 <p>Mathew : +44 7704 717771</p>
                 <p>Benny : +44 7405 093086</p>
                 <p>Sam : +44 7730 873122</p>
-                
               </div>
 
               <div>
