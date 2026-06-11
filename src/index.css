@@ -2,98 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-Definition of the design system. 
-All brand colors, gradients, fonts, etc. are defined here in HSL format.
-*/
-
 @layer base {
   :root {
-    /* Base colors */
-    --background: 0 0% 100%;
-    --foreground: 240 20% 10%;
+    /* Backgrounds */
+    --background: 210 20% 98%;
+    --foreground: 224 40% 12%;
 
+    /* Cards */
     --card: 0 0% 100%;
-    --card-foreground: 240 20% 10%;
+    --card-foreground: 224 40% 12%;
 
+    /* Popovers */
     --popover: 0 0% 100%;
-    --popover-foreground: 240 20% 10%;
+    --popover-foreground: 224 40% 12%;
 
-    /* 🎨 Brand Colors */
-    /* Primary: Deep Royal Blue (#000153) */
-    --primary: 240 100% 16%;
+    /* Brand Colors */
+    /* Corporate Slate Blue */
+    --primary: 221 45% 33%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 240 80% 25%;
+    --primary-glow: 221 50% 45%;
 
-    /* Secondary: Elegant Wine Red (#7b001c) */
-    --secondary: 350 100% 24%;
+    /* Sophisticated Muted Burgundy/Rose */
+    --secondary: 335 32% 36%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Supporting tones */
-    --muted: 240 10% 95%;
-    --muted-foreground: 240 10% 45%;
+/* Premium Minimalist Slate Gray Accent */
+    --accent: 215 15% 90%;
+    --accent-foreground: 224 40% 12%;
 
-    --accent: 350 100% 24%;
-    --accent-foreground: 0 0% 100%;
+    /* Utility */
+    --muted: 214 16% 94%;
+    --muted-foreground: 216 14% 45%;
 
-    /* Structural */
-    --border: 240 20% 90%;
-    --input: 240 20% 90%;
-    --ring: 240 100% 16%;
+    /* Structure */
+    --border: 214 16% 88%;
+    --input: 214 16% 88%;
+    --ring: 221 45% 33%;
 
+    /* Radius */
     --radius: 0.75rem;
 
     /* Gradients */
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(240 100% 16%),
-      hsl(240 80% 25%)
+      hsl(221 45% 33%),
+      hsl(221 40% 48%)
     );
+
     --gradient-warm: linear-gradient(
       135deg,
-      hsl(350 100% 24%),
-      hsl(350 80% 30%)
+      hsl(335 32% 36%),
+      hsl(335 28% 48%)
+    );
+
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(36 65% 48%),
+      hsl(41 68% 58%)
     );
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -2px hsl(240 100% 16% / 0.1);
-    --shadow-medium: 0 8px 30px -4px hsl(240 100% 16% / 0.15);
-    --shadow-strong: 0 12px 40px -6px hsl(240 100% 16% / 0.2);
+    --shadow-soft: 0 4px 20px -2px hsl(221 45% 33% / 0.04);
+    --shadow-medium: 0 8px 30px -4px hsl(221 45% 33% / 0.06);
+    --shadow-strong: 0 12px 40px -6px hsl(221 45% 33% / 0.10);
 
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Motion */
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  /* 🌙 Dark mode */
   .dark {
-    --background: 240 20% 10%;
-    --foreground: 0 0% 100%;
+    --background: 222 36% 7%;
+    --foreground: 212 20% 96%;
 
-    --card: 240 20% 12%;
-    --card-foreground: 0 0% 100%;
+    --card: 222 35% 10%;
+    --card-foreground: 212 20% 96%;
 
-    --popover: 240 20% 12%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 222 35% 10%;
+    --popover-foreground: 212 20% 96%;
 
-    /* Deepened blue glow for dark mode */
-    --primary: 240 80% 25%;
+    --primary: 217 60% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 240 70% 35%;
+    --primary-glow: 217 60% 65%;
 
-    /* Richer wine tone for contrast */
-    --secondary: 350 80% 35%;
+    --secondary: 335 35% 52%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 15% 22%;
-    --muted-foreground: 0 0% 85%;
+    --accent: 36 65% 55%;
+    --accent-foreground: 222 36% 7%;
 
-    --accent: 350 80% 35%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 222 24% 15%;
+    --muted-foreground: 217 12% 70%;
 
-    --border: 240 15% 25%;
-    --input: 240 15% 25%;
-    --ring: 240 80% 25%;
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 217 60% 55%;
   }
 }
 
@@ -102,7 +105,14 @@ All brand colors, gradients, fonts, etc. are defined here in HSL format.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

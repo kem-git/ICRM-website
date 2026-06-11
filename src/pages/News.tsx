@@ -1,11 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, FileText, Video } from "lucide-react";
+import { Calendar, FileText, Video, Radio, Newspaper, GraduationCap } from "lucide-react";
 import SEO from "@/components/seo/SEO";
 
 const News = () => {
   return (
-    <>
+    <div className="flex flex-col">
       <SEO
         title="News & Resources | ICRM"
         description="Latest updates, mission reports, upcoming events, and educational resources from ICRM — International Christian Rehab Mission. Gospel Through Therapy in action."
@@ -78,72 +78,72 @@ const News = () => {
         }}
       />
 
-      {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      {/* Hero Section */}
+      <section className="py-24 bg-gradient-to-b from-primary/5 to-background border-b border-border">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <Radio className="w-4 h-4" />
+            <span>Updates & Mission Publications</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tight">
             News & Resources
           </h1>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Updates on our mission work and educational materials.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Stay updated on our ongoing mission deployments, internal field reflections, and professional training resources.
           </p>
         </div>
       </section>
 
-      {/* News */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Latest Updates
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <Badge className="w-fit mb-2">Mission Update</Badge>
-                <CardTitle>Expanding Our Reach in India</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+      {/* Latest Updates Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-4 tracking-tight">Latest Updates</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16 text-sm">
+            Dispatches from our active therapy deployments and ministries across India and the UK.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Post 1 */}
+            <Card className="shadow-none border-border hover:border-primary/50 transition-colors flex flex-col justify-between">
+              <CardContent className="p-8 space-y-4">
+                <Badge className="w-fit">Mission Update</Badge>
+                <h3 className="text-xl font-bold tracking-tight text-foreground">Expanding Our Reach in India</h3>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Calendar className="w-4 h-4" />
-                  March 15, 2025
+                  <span>March 15, 2025</span>
                 </div>
-                <p className="text-muted-foreground">
-                  Our recent mission trip demonstrated the urgent need for integrated therapeutic and spiritual care.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Our recent mission trip demonstrated the urgent need for integrated therapeutic and spiritual care across underserved medical corridors.
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <Badge className="w-fit mb-2" variant="secondary">
-                  Reflection
-                </Badge>
-                <CardTitle>Therapy as Ministry</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            {/* Post 2 */}
+            <Card className="shadow-none border-border hover:border-primary/50 transition-colors flex flex-col justify-between">
+              <CardContent className="p-8 space-y-4">
+                <Badge className="w-fit" variant="secondary">Reflection</Badge>
+                <h3 className="text-xl font-bold tracking-tight text-foreground">Therapy as Ministry</h3>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Calendar className="w-4 h-4" />
-                  February 28, 2025
+                  <span>February 28, 2025</span>
                 </div>
-                <p className="text-muted-foreground">
-                  Exploring how therapeutic excellence reflects Christ's character.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Exploring how professional clinical expertise and therapeutic excellence directly manifest Christ's character on the healthcare field.
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <Badge className="w-fit mb-2">Event</Badge>
-                <CardTitle>Upcoming Webinar</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            {/* Post 3 */}
+            <Card className="shadow-none border-border hover:border-primary/50 transition-colors flex flex-col justify-between">
+              <CardContent className="p-8 space-y-4">
+                <Badge className="w-fit">Event</Badge>
+                <h3 className="text-xl font-bold tracking-tight text-foreground">Upcoming Webinar</h3>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Calendar className="w-4 h-4" />
-                  November 25, 2025
+                  <span>November 25, 2025</span>
                 </div>
-                <p className="text-muted-foreground">
-                  Educational session on sensory processing challenges in children.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  An upcoming clinical educational session outlining sensory processing challenges and early childhood therapeutic support frameworks.
                 </p>
               </CardContent>
             </Card>
@@ -151,34 +151,45 @@ const News = () => {
         </div>
       </section>
 
-      {/* Events */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Upcoming Events
-          </h2>
+      {/* Upcoming Events (Styled using the left-border operational values blueprint) */}
+      <section className="py-24 bg-muted/30 border-t border-b border-border">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4 tracking-tight">Upcoming Events</h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-16 text-sm">
+            Mark your calendar to participate in our corporate prayer initiatives, clinical webinars, and deployments.
+          </p>
 
           <div className="space-y-6">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  Mission Trip Deployment
-                </h3>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  November 11–12, 2025
+            <Card className="shadow-sm border-l-4 border-l-primary border-t-0 border-r-0 border-b-0">
+              <CardContent className="p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    Mission Trip Deployment
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Corporate global dispatch preparation and ground team structural alignment briefings.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0 bg-background border border-border px-3 py-1.5 rounded text-xs text-muted-foreground font-medium h-fit w-fit">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <span>November 11–12, 2025</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  Webinar: Sensory Processing Disorder
-                </h3>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  November 25, 2025
+            <Card className="shadow-sm border-l-4 border-l-primary border-t-0 border-r-0 border-b-0">
+              <CardContent className="p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    Webinar: Sensory Processing Disorder
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Educational integration models tailored for local healthcare professionals, volunteers, and parents.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0 bg-background border border-border px-3 py-1.5 rounded text-xs text-muted-foreground font-medium h-fit w-fit">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <span>November 25, 2025</span>
                 </div>
               </CardContent>
             </Card>
@@ -186,41 +197,63 @@ const News = () => {
         </div>
       </section>
 
-      {/* Resources */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Educational Resources
-          </h2>
+      {/* Educational Resources Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4 tracking-tight">Educational Resources</h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-16 text-sm">
+            Equipping professional therapists and ministries with clinical strategies rooted in a Gospel-centered worldview.
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <FileText className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="shadow-none border-border hover:border-primary/30 transition-all group">
+              <CardContent className="p-8">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-6 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <FileText className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   Clinical Guidelines
                 </h3>
-                <p className="text-muted-foreground">
-                  Integrating spiritual care with therapeutic intervention.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Comprehensive methodological frameworks detailing the operational integration of continuous spiritual care within clinical medical assessment environments.
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <Video className="w-10 h-10 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">
+            <Card className="shadow-none border-border hover:border-primary/30 transition-all group">
+              <CardContent className="p-8">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-6 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Video className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   Training Modules
                 </h3>
-                <p className="text-muted-foreground">
-                  Resources for therapists interested in mission work.
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Interactive multi-part visual modules and video orientations designed for certified clinical therapists preparing for global mission deployments.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-    </>
+
+      {/* Bottom Governance / Call to Action Statement */}
+      <section className="py-24 bg-muted/20 border-t border-border">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <GraduationCap className="w-12 h-12 text-primary mx-auto mb-6" />
+          <h2 className="text-3xl font-bold mb-6">Stay Connected to the Mission</h2>
+          <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+            By accessing our training components and applying these guidelines locally, you actively join a growing network dedicated to demonstrating Christ's restorative heart through excellent therapeutic practice.
+          </p>
+          <a 
+            href="/get-involved" 
+            className="inline-flex items-center justify-center rounded-md font-semibold text-sm bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 shadow-sm transition-colors"
+          >
+            Get Involved Today
+          </a>
+        </div>
+      </section>
+    </div>
   );
 };
 

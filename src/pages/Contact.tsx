@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
 import SEO from "@/components/seo/SEO";
 
 const Contact = () => {
@@ -53,92 +53,134 @@ const Contact = () => {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="py-24 bg-gradient-to-b from-primary/5 to-background border-b border-border">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <MessageSquare className="w-4 h-4" />
+            <span>Connect & Support Communications</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tight">
             Contact Us
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We'd love to hear from you—whether you have questions about our mission,
-            volunteer opportunities, or partnerships.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            We'd love to hear from you—whether you have questions about our mission, volunteer opportunities, or partnerships.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-4xl mx-auto space-y-8">
+      {/* Main Action Channel Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold text-center mb-4 tracking-tight">Get in Touch</h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-16 text-sm">
+            Reach out directly to initiate dialogue regarding deployments, professional training modules, or administrative resources.
+          </p>
 
-          <h2 className="text-3xl font-bold text-center text-foreground">
-            Get in Touch
-          </h2>
-
-          {/* Email Contact Card */}
-          <Card className="border-2 shadow-lg">
-            <CardContent className="p-10 text-center space-y-6">
-
-              <div className="flex justify-center">
-                <div className="bg-primary/10 p-5 rounded-full">
-                  <Mail className="w-8 h-8 text-primary" />
-                </div>
+          {/* Email Primary Card */}
+          <Card className="shadow-none border-border bg-muted/20">
+            <CardContent className="p-8 md:p-12 text-center space-y-6">
+              <div className="p-4 bg-primary/10 text-primary rounded-full w-fit mx-auto">
+                <Mail className="w-8 h-8" />
               </div>
 
-              <div>
-                <h3 className="text-2xl font-semibold mb-2">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground">
                   Email Our Team
                 </h3>
-                <p className="text-muted-foreground max-w-md mx-auto">
-                  Click below to contact us directly using your preferred email
-                  application. A message template will be pre-filled for your convenience.
+                <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+                  Click below to contact us directly using your preferred email client application. A localized message template has been pre-formatted for your convenience.
                 </p>
               </div>
 
-              <Button
-                asChild
-                size="lg"
-                className="px-10 py-6 text-base rounded-2xl shadow-md hover:shadow-lg transition-all"
-              >
-                <a href={mailtoLink}>
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send an Email
-                </a>
-              </Button>
-
+              <div className="pt-2">
+                <Button
+                  asChild
+                  className="font-semibold text-sm bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 shadow-sm transition-colors"
+                >
+                  <a href={mailtoLink}>
+                    <Mail className="w-4 h-4 mr-2" />
+                    Send an Email
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
-
-          {/* Phone & Address */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Phone className="w-5 h-5 text-primary" />
-                Phone & Address
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm">
-
-              <div>
-                <p className="font-semibold">Phone</p>
-                <p>Punith : +44 7587 891086</p>
-                <p>Mathew : +44 7704 717771</p>
-                <p>Benny : +44 7405 093086</p>
-                <p>Sam : +44 7730 873122</p>
-              </div>
-
-              <div>
-                <p className="font-semibold">Address</p>
-                <p>
-                  International Christian Rehab Mission (ICRM)<br />
-                  3 Wood Rise, Pinner, Greater London, HA5 2JD, United Kingdom
-                </p>
-              </div>
-
-            </CardContent>
-          </Card>
-
         </div>
       </section>
 
+      {/* Informational Channels (Styled using the Left-Border Core Operational Blueprint) */}
+      <section className="py-24 bg-muted/30 border-t border-b border-border">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            
+            {/* Phone Support Details */}
+            <Card className="border-l-4 border-l-primary border-t-0 border-r-0 border-b-0 shadow-sm bg-background">
+              <CardContent className="p-8 space-y-4">
+                <div className="p-2.5 bg-primary/10 text-primary rounded-lg w-fit">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-1">Direct Operational Lines</h4>
+                  <p className="text-xs text-muted-foreground mb-4">Feel free to dial our field leads for explicit team alignments.</p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-border/60 pt-4 text-sm">
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">Punith</p>
+                    <p className="font-semibold text-foreground tracking-tight">+44 7587 891086</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">Mathew</p>
+                    <p className="font-semibold text-foreground tracking-tight">+44 7704 717771</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">Benny</p>
+                    <p className="font-semibold text-foreground tracking-tight">+44 7405 093086</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">Sam</p>
+                    <p className="font-semibold text-foreground tracking-tight">+44 7730 873122</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Address Location Details */}
+            <Card className="border-l-4 border-l-primary border-t-0 border-r-0 border-b-0 shadow-sm bg-background">
+              <CardContent className="p-8 space-y-4">
+                <div className="p-2.5 bg-primary/10 text-primary rounded-lg w-fit">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground mb-1">Registered Headquarters</h4>
+                  <p className="text-xs text-muted-foreground mb-4">Official governance and dispatch base within the United Kingdom.</p>
+                </div>
+                
+                <div className="border-t border-border/60 pt-4 text-sm space-y-1">
+                  <p className="font-bold text-primary text-xs tracking-wider uppercase">International Christian Rehab Mission (ICRM)</p>
+                  <p className="text-muted-foreground leading-relaxed font-medium">
+                    3 Wood Rise,<br />
+                    Pinner, Greater London,<br />
+                    HA5 2JD, United Kingdom
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom Governance / Structural Statement */}
+      <section className="py-24 bg-muted/20">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <ShieldCheck className="w-12 h-12 text-primary mx-auto mb-6" />
+          <h2 className="text-3xl font-bold mb-6">Administrative Governance</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-0">
+            ICRM handles all data and incoming communications in strict adherence with foundational legal standards. All clinical credentials and ministry reference packages will be requested through secure, encrypted data workflows following initial validation.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
