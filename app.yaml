@@ -1,8 +1,23 @@
+kind: wasmer.io/App.v0
 name: icrm
 app_id: da_K6AIot5UN056
 owner: kem-git
 package: .
-kind: wasmer.io/App.v0
 redirects:
 - from: /.*
   to: /index.html
+annotations:
+  shipitcli.com/config:
+    build_command: bun run build
+    commands:
+      build: npm run build
+    convert_redirects: true
+    extra_dependencies: []
+    node_version: '22'
+    package_manager: bun
+    port: 8080
+    static_dir: dist
+    static_generator: vite
+    sws_version: 2.38.0
+  shipitcli.com/provider: node-static
+  shipitcli.com/version: 0.19.6.dev1
