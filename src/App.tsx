@@ -14,16 +14,17 @@ import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
-// Import your brand new portal layout file
+// Import your brand new portal layout files
 import PortalHome from "./pages/portal/PortalHome";
+import TherapistHome from "./pages/portal/TherapistHome"; 
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const hostname = window.location.hostname;
 
-  // Domain matching for app.icrm.org.uk
-  if (hostname === "app.icrm.org.uk") {
+  // Domain matching for app.icrm.org.uk or local coding setup
+  if (hostname === "app.icrm.org.uk" || hostname === "localhost") {
     return (
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
@@ -31,7 +32,12 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
+              {/* Login Gateway page */}
               <Route path="/" element={<PortalHome />} />
+              
+              {/* Authenticated Workspace dashboard page */}
+              <Route path="/dashboard" element={<TherapistHome />} />
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
@@ -40,6 +46,7 @@ const App = () => {
     );
   }
 
+  // Fallback default routing layout configuration (Main website pages)
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
