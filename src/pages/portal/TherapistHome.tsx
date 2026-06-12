@@ -2,16 +2,33 @@ import { useMsal } from "@azure/msal-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, FileText, ClipboardList, LogOut, FileSpreadsheet, Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import SEO from "@/components/seo/SEO";
 
 export default function TherapistDashboard() {
   const { instance, accounts } = useMsal();
+  const navigate = useNavigate();
   
-  // Fetch active user data from the Microsoft secure context
+  // Security protection routing rule
+  useEffect(() => {
+    if (accounts.length === 0) {
+      navigate("/", { replace: true });
+    }
+  }, [accounts, navigate]);
+
+  // Hault rendering lifecycle if no secure user is present during bounce
+  if (accounts.length === 0) {
+    return null; 
+  }
+
   const therapistName = accounts[0]?.name || "Therapist";
 
   const handleLogout = () => {
-    instance.logoutPopup();
+    // Standardizes professional redirection logout to avoid sticky tabs on production subdomains
+    instance.logoutRedirect({
+      postLogoutRedirectUri: "https://app.icrm.org.uk/"
+    }); 
   };
 
   return (

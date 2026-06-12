@@ -14,7 +14,6 @@ import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
-// Import your brand new portal layout files
 import PortalHome from "./pages/portal/PortalHome";
 import TherapistHome from "./pages/portal/TherapistHome"; 
 

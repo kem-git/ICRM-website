@@ -2,33 +2,38 @@ import { useMsal, AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/
 import { loginRequest } from "@/config/authConfig"; 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShieldCheck, LogIn, Lock, UserCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, LogIn, Lock, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import SEO from "@/components/seo/SEO";
 
 export default function PortalHome() {
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
 
+  // Automatic verification redirect hook
+  useEffect(() => {
+    if (accounts.length > 0) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [accounts, navigate]);
+
   const handleLogin = async () => {
     try {
+      // Fires the secure single-sign-on challenge
       await instance.loginPopup(loginRequest);
     } catch (error) {
       console.error("Azure authentication failed: ", error);
     }
   };
 
-  const handleLogout = () => {
-    instance.logoutPopup();
-  };
-
   return (
     <>
       <SEO 
-  title="Therapist Portal Login | ICRM" 
-  description="Secure portal access for authorized International Christian Rehab Mission therapists."
-  canonical="https://app.icrm.org.uk/"
-/>
+        title="Therapist Portal Login | ICRM" 
+        description="Secure portal access for authorized International Christian Rehab Mission therapists."
+        canonical="https://app.icrm.org.uk/"
+      />
 
       <div className="flex flex-col items-center justify-center min-h-[90vh] bg-muted/20 p-6">
         <Card className="max-w-md w-full border-t-4 border-t-primary shadow-lg bg-background">
@@ -64,43 +69,9 @@ export default function PortalHome() {
             </UnauthenticatedTemplate>
 
             <AuthenticatedTemplate>
-              <div className="w-full space-y-6">
-                <div className="p-4 bg-muted/50 rounded-xl border border-border flex items-center gap-3 text-left">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">
-                    {accounts[0]?.name?.charAt(0) || "U"}
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-sm font-semibold truncate text-foreground">
-                      {accounts[0]?.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground truncate">
-                      {accounts[0]?.username}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  You have successfully verified your credentials. You can now securely proceed to your operational workspace.
-                </p>
-
-                <div className="flex flex-col gap-3">
-                  <Button 
-                    onClick={() => navigate("/dashboard")} 
-                    className="w-full py-6"
-                    size="lg"
-                  >
-                    <UserCheck className="w-4 h-4 mr-2" />
-                    Enter Therapist Dashboard
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleLogout} 
-                    variant="ghost" 
-                    className="text-xs text-muted-foreground hover:text-destructive"
-                  >
-                    Sign Out Account
-                  </Button>
-                </div>
+              <div className="w-full space-y-4 py-4 flex flex-col items-center">
+                <div className="w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+                <p className="text-sm text-muted-foreground">Loading workspace sessions...</p>
               </div>
             </AuthenticatedTemplate>
 
