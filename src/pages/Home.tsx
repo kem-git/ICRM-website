@@ -7,7 +7,6 @@ import heroImage from "@/assets/hero-therapy.jpg";
 import communityImage from "@/assets/community-impact.jpg";
 import SEO from "@/components/seo/SEO";
 
-// Viewport-aware Animated Counter with slower, smoother interpolation speeds
 interface AnimatedCounterProps {
   target: number;
   duration?: number;
@@ -34,7 +33,6 @@ const AnimatedCounter = ({ target, duration = 2200, suffix = "" }: AnimatedCount
             
             const progressPercentage = Math.min(progress / duration, 1);
             
-            // Cubic ease-out curve for an ultra-smooth slowing down effect toward the target number
             const easeOutProgress = 1 - Math.pow(1 - progressPercentage, 3);
             
             const currentCount = Math.floor(easeOutProgress * target);
@@ -107,7 +105,6 @@ const Home = () => {
         ]}
       />
 
-      {/* Hero Section */}
       <section className="relative min-h-[75vh] flex items-center overflow-hidden border-b border-border">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -145,7 +142,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* What We Do Section */}
       <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-16">
@@ -158,7 +154,6 @@ const Home = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Pillar 1 */}
             <Card className="group relative border-t-4 border-t-primary hover:shadow-md transition-shadow">
               <CardContent className="pt-8 px-6 pb-6 flex flex-col h-full justify-between">
                 <div>
@@ -178,7 +173,6 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            {/* Pillar 2 */}
             <Card className="group relative border-t-4 border-t-primary hover:shadow-md transition-shadow">
               <CardContent className="pt-8 px-6 pb-6 flex flex-col h-full justify-between">
                 <div>
@@ -198,7 +192,6 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            {/* Pillar 3 */}
             <Card className="group relative border-t-4 border-t-primary hover:shadow-md transition-shadow">
               <CardContent className="pt-8 px-6 pb-6 flex flex-col h-full justify-between">
                 <div>
@@ -241,7 +234,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why ICRM Section */}
       <section className="py-24">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
